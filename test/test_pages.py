@@ -1,4 +1,5 @@
 from pyfax import Page, Line, Color
+import lipsum
 
 
 def test_text():
@@ -36,3 +37,8 @@ def test_block():
         assert str(j) == str(p2.lines[i])
 
     assert p1.to_tti() == p2.to_tti()
+
+
+def text_wrapped_text():
+    p = Page(100)
+    p.add_wrapped_text(2, lipsum.generate_words(100))

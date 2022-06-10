@@ -24,6 +24,6 @@ if __name__ == "__main__":
         packages=["pyfax", "pyfax.tools"],
         install_requires=["requests", "feedparser"],
         extras_require={
-          "ci": ["pytest"]
+          "ci": ["pytest", "lipsum"]
         }
     )
