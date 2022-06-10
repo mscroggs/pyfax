@@ -1,3 +1,7 @@
+# Version 2022.6.3 (10 June 2022)
+
+- Added docs
+
 # Version 2022.6.2 (10 June 2022)
 
 - Added typing
