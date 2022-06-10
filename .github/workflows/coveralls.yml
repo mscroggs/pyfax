@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: 3.9
       - uses: actions/checkout@v3
-      - run: pip3 install requests feedparser pytest
+      - run: pip3 install requests feedparser pytest pytest-cov
         name: Install pyfax
       - run: python3 -m pytest --cov=pyfax test/ > .coveralls_output
         name: Run unit tests
