@@ -24,4 +24,3 @@ if __name__ == "__main__":
         packages=["pyfax"],
         install_requires=["sympy", "numpy"]
     )
-
