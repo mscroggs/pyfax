@@ -1,0 +1,30 @@
+name: 🥼
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  coveralls:
+    name: Run coverage checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - uses: actions/checkout@v3
+      - run: pip3 install .[ci]
+        name: Install pyfax
+      - run: python3 -m pytest -n=auto --cov=pyfax test/ > .coveralls_output
+        name: Run unit tests
+        continue-on-error: true
+      - name: Check coverage is over 80%
+        run: python3 .github/scripts/coveralls_check.py
+      - name: Upload to Coveralls
+        if: ${{ github.ref == 'ref/head/main' }}
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.coveralls_token }}
+        run: coveralls

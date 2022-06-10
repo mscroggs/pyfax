@@ -25,6 +25,6 @@ pip3 install .
 ```
 
 ## Testing & coverage
-[![Style checks](https://github.com/mscroggs/pyfax/actions/workflows/style-checks.yml/badge.svg)](https://github.com/mscroggs/pyfax/actions)
-[![Run tests](https://github.com/mscroggs/pyfax/actions/workflows/run-tests.yml/badge.svg)](https://github.com/mscroggs/pyfax/actions)
+[![🕶️](https://github.com/mscroggs/pyfax/actions/workflows/style-checks.yml/badge.svg)](https://github.com/mscroggs/pyfax/actions/workflows/style-checks.yml)
+[![🧪](https://github.com/mscroggs/pyfax/actions/workflows/run-tests.yml/badge.svg)](https://github.com/mscroggs/pyfax/actions/workflows/run-tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/mscroggs/pyfax/badge.svg?branch=main)](https://coveralls.io/github/mscroggs/pyfax?branch=main)
