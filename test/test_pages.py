@@ -1,5 +1,7 @@
+import pyfax
 from pyfax import Page, Line, Color
 import lipsum
+import os
 
 
 def test_text():
@@ -50,3 +52,14 @@ def text_wrapped_text():
 def test_tagline():
     p = Page(100)
     p.set_tagline("TAGLINE")
+
+
+def test_test_page():
+    pyfax.config.build_dir = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)),
+        "_pages")
+
+    os.system(f"rm -rf {pyfax.config.build_dir}")
+    assert os.system(f"mkdir {pyfax.config.build_dir}") == 0
+
+    p = pyfax.pages.make_test_page()
