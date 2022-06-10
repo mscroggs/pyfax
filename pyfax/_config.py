@@ -2,8 +2,7 @@ import os
 
 
 class Config:
-    def __init__(self):
-        self._entries = {}
+    _entries = {}
 
     def __getattr__(self, a):
         if a in self._entries:
