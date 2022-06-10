@@ -41,4 +41,12 @@ def test_block():
 
 def text_wrapped_text():
     p = Page(100)
-    p.add_wrapped_text(2, lipsum.generate_words(100))
+    p.add_wrapped_text(2, lipsum.generate_words(500))
+
+    p = Page(101)
+    p.add_wrapped_text(2, lipsum.generate_words(500), double=True)
+
+
+def test_tagline():
+    p = Page(100)
+    p.set_tagline("TAGLINE")
