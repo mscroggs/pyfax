@@ -4,3 +4,8 @@
 _pages/*
 .coverage
 .coveralls_output
+
+build/
+dist/
+*.egg-info
+docs/_build
