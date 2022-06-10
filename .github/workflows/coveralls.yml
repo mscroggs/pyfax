@@ -28,4 +28,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run: python3 -m coveralls
         env:
-          COVERALLS-REPO-TOKEN: ${{ secrets.coveralls_token }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.coveralls_token }}
