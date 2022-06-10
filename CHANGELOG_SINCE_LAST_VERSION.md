@@ -1,0 +1,2 @@
+- Added typing
+- Added docs
