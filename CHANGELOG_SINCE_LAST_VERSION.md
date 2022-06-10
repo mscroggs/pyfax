@@ -1,2 +1,0 @@
-- Increased test coverage.
-- Added test page.

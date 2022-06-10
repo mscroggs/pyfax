@@ -1,3 +1,8 @@
+# Version 2022.6.4 (10 June 2022)
+
+- Increased test coverage.
+- Added test page.
+
 # Version 2022.6.3 (10 June 2022)
 
 - Added docs
