@@ -22,7 +22,7 @@ if __name__ == "__main__":
         maintainer_email="pyfax@mscroggs.co.uk",
         url="https://github.com/mscroggs/pyfax",
         packages=["pyfax", "pyfax.tools"],
-        install_requires=[],
+        install_requires=["requests", "feedparser"],
         extras_require={
           "ci": ["pytest"]
         }

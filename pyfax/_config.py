@@ -1,15 +1,30 @@
+"""Configuration."""
+
+from typing import Any, Dict
 import os
 
 
 class Config:
-    _entries = {}
+    """A class to store config variables."""
+    _entries: Dict[str, Any] = {}
 
-    def __getattr__(self, a):
+    def __getattr__(self, a: str) -> Any:
+        """Get a config variable.
+
+        Args:
+            a: The config variable.
+        """
         if a in self._entries:
             return self._entries[a]
         return None
 
-    def __setattr__(self, a, b):
+    def __setattr__(self, a: str, b: Any):
+        """Set a config variable.
+
+        Args:
+            a: The config variable.
+            b: The value.
+        """
         self._entries[a] = b
 
 
