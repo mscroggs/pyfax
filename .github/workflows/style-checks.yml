@@ -1,0 +1,23 @@
+name: 🕶️ 
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  style-checks:
+    name: Run style checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - run: pip3 install flake8
+      - run: python3 -m flake8 .
+        name: Run flake8 checks
