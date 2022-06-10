@@ -17,8 +17,7 @@ jobs:
           python-version: 3.9
       - uses: actions/checkout@v3
       - run: |
-            pip3 install requests feedparser pytest pytest-cov
-            sudo apt-get install -y ruby-coveralls
+            pip3 install requests feedparser pytest pytest-cov coverage coveralls
         name: Install requirements
       - run: python3 -m pytest --cov=pyfax test/ > .coveralls_output
         name: Run unit tests
