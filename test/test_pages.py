@@ -62,4 +62,4 @@ def test_test_page():
     os.system(f"rm -rf {pyfax.config.build_dir}")
     assert os.system(f"mkdir {pyfax.config.build_dir}") == 0
 
-    p = pyfax.pages.make_test_page()
+    pyfax.pages.make_test_page()
