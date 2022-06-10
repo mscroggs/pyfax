@@ -2,3 +2,5 @@
 .*.swp
 
 _pages/*
+.coverage
+.coveralls_output

@@ -16,9 +16,9 @@ jobs:
         with:
           python-version: 3.9
       - uses: actions/checkout@v3
-      - run: pip3 install .[ci]
+      - run: pip3 install requests feedparser pytest
         name: Install pyfax
-      - run: python3 -m pytest -n=auto --cov=pyfax test/ > .coveralls_output
+      - run: python3 -m pytest --cov=pyfax test/ > .coveralls_output
         name: Run unit tests
         continue-on-error: true
       - name: Check coverage is over 80%
