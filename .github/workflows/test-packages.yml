@@ -18,7 +18,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - uses: actions/checkout@v2
         with:
-          ref: v2022.6.2
+          ref: v2022.6.3
         name: Get latest pyfax version
       - run: rm -rf pyfax VERSION
         name: Remove downloaded pyfax
@@ -45,7 +45,7 @@ jobs:
           activate-environment: pyfax
       - uses: actions/checkout@v2
         with:
-          ref: v2022.6.2
+          ref: v2022.6.3
         name: Get latest pyfax version
       - run: rm -rf pyfax VERSION
         name: Remove downloaded pyfax
@@ -71,13 +71,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: |
-          wget -O pyfax.tar.gz https://pypi.io/packages/source/s/pyfax/pyfax-2022.6.2.tar.gz
+          wget -O pyfax.tar.gz https://pypi.io/packages/source/s/pyfax/pyfax-2022.6.3.tar.gz
           tar -xvzf pyfax.tar.gz
         name: Download and unpack latest version of pyfax
       - run: pip install pytest
         name: Install pytest
       - run: |
-          cd pyfax-2022.6.2
+          cd pyfax-2022.6.3
           pip install -r requirements.txt
           python3 -m pytest test/
         name: Install requirements, run tests and demos
