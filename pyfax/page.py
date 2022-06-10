@@ -1,4 +1,4 @@
-import config
+from ._config import config
 import os
 from enum import Enum
 
