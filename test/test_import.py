@@ -1,2 +1,2 @@
 def test_import():
-    import pyfax
+    import pyfax  # noqa: F401
