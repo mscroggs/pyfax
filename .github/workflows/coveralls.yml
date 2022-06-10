@@ -22,10 +22,10 @@ jobs:
       - run: python3 -m pytest --cov=pyfax test/ > .coveralls_output
         name: Run unit tests
         continue-on-error: true
-      - name: Check coverage is over 80%
-        run: python3 .github/scripts/coveralls_check.py
       - name: Upload to Coveralls
         if: ${{ github.ref == 'refs/heads/main' }}
         run: python3 -m coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.coveralls_token }}
+      - name: Check coverage is over 80%
+        run: python3 .github/scripts/coveralls_check.py
