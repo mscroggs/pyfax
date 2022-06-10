@@ -23,5 +23,5 @@ jobs:
         name: Run flake8 checks
       - run: python3 -m pydocstyle pyfax
         name: Run pydocstyle checks
-      - run: python3 -m mypy pyfax
+      - run: python3 -m mypy --install-types pyfax
         name: Run mypy checks
