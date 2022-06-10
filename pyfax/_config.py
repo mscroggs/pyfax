@@ -32,5 +32,3 @@ config = Config()
 config.build_dir = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
     os.path.join("..", "_pages"))
-
-config.teletext_button = "TELETEXT BUTTON"
