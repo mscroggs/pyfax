@@ -44,8 +44,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: |
-          wget -O pyfax.tar.gz https://pypi.io/packages/source/s/pyfax/pyfax-2022.6.4.tar.gz
-          tar -xvzf pyfax-2022.6.4.tar.gz
+          wget -O pyfax.tar.gz https://pypi.io/packages/source/p/pyfax/pyfax-2022.6.4.tar.gz
+          tar -xvzf pyfax.tar.gz
         name: Download and unpack latest version of pyfax
       - run: pip install pytest lipsum
         name: Install test requirements
