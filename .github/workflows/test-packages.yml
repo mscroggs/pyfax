@@ -19,14 +19,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: actions/checkout@v2
-        with:
-          ref: v2022.6.4
-        name: Get latest pyfax version
-      - run: rm -rf pyfax VERSION
-        name: Remove downloaded pyfax
       - run: python3 -m pip install pyfax
         name: Install pyfax
+      - run: pip install lipsum
+        name: Install CI requirements
       - run: pip install pytest
         name: Install pytest
       - run: python3 -m pytest test/
