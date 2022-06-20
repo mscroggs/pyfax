@@ -56,7 +56,7 @@ with open("pyfax/version.py", "w") as f:
 
 # .github/workflows/test-packages.yml
 new_test = ""
-url = "https://pypi.io/packages/source/s/pyfax/pyfax-"
+url = "https://pypi.io/packages/source/p/pyfax/pyfax-"
 with open(".github/workflows/test-packages.yml") as f:
     for line in f:
         if "ref:" in line:
