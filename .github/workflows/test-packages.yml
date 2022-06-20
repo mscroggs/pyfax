@@ -51,6 +51,6 @@ jobs:
         name: Install test requirements
       - run: |
           cd pyfax-2022.6.4
-          pip install -r requirements.txt
+          pip install requests feedparser pytest lipsum
           python3 -m pytest test/
         name: Install requirements, run tests and demos
