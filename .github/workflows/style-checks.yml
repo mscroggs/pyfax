@@ -25,7 +25,7 @@ jobs:
       - run: python3 -m flake8 .
         name: Run flake8 checks
       - run: |
-          python3 -m mypy types-requests
+          python3 -m pip install types-requests
           python3 -m mypy .
         name: Run mypy checks
       - run: python3 -m isort --check .
