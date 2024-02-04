@@ -1,3 +1,8 @@
+# Version 2024.2.4 (04 February 2024)
+
+- Update Python versions
+- Update to use pyproject.toml
+
 # Version 2022.6.5 (20 June 2022)
 
 - fix test
