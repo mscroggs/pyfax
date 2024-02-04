@@ -2,8 +2,8 @@ import os
 import sys
 import setuptools
 
-if sys.version_info < (3, 6):
-    print("Python 3.6 or higher required, please upgrade.")
+if sys.version_info < (3, 8):
+    print("Python 3.8 or higher required, please upgrade.")
     sys.exit(1)
 
 with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.md")) as f:
@@ -15,7 +15,7 @@ if __name__ == "__main__":
         description="a Python library for generating teletext tti files",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        version="2022.6.5",
+        version="2024.2.1",
         author="Matthew Scroggs",
         license="MIT",
         author_email="pyfax@mscroggs.co.uk",
