@@ -4,7 +4,7 @@ requires = ["flit_core >=3.8.0,<4"]
 
 [project]
 name = "pyfax"
-version = "2024.2.6"
+version = "2024.2.7"
 description = "a Python library for generating teletext tti files"
 readme = "README.md"
 requires-python = ">=3.8.0"
