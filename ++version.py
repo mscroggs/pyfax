@@ -41,10 +41,10 @@ with open("codemeta.json", "w") as f:
 new_pyproject = ""
 with open("pyproject.toml") as f:
     for line in f:
-        if f'version="{version}"' in line:
-            a, b = line.split(f'version="{version}"')
+        if 'version = "' in line:
+            a, b = line.split('version = "')
             b = b.split('"', 1)[1]
-            new_pyproject += f'{a}version="{new_version_str}"{b}'
+            new_pyproject += f'{a}version = "{new_version_str}"{b}'
         else:
             new_pyproject += line
 with open("pyproject.toml", "w") as f:
