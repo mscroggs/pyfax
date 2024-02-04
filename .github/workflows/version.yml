@@ -32,7 +32,7 @@ jobs:
       - name: Prepare release
         run: |
           python3 -m pip install build
-          python3 -m pip build .
+          python3 -m build .
         if: steps.version-check.outputs.release != 'no'
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
