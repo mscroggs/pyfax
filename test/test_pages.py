@@ -1,6 +1,7 @@
-import pyfax
-from pyfax import Page, Line, Color
 import os
+
+import pyfax
+from pyfax import Color, Line, Page
 
 lipsum = ("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
           "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis "

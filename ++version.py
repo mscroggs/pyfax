@@ -37,18 +37,18 @@ data["dateModified"] = now.strftime("%Y-%m-%d")
 with open("codemeta.json", "w") as f:
     json.dump(data, f)
 
-# setup.py
-new_setup = ""
-with open("setup.py") as f:
+# pyproject.toml
+new_pyproject = ""
+with open("pyproject.toml") as f:
     for line in f:
-        if 'version="' in line:
-            a, b = line.split('version="')
+        if f'version="{version}"' in line:
+            a, b = line.split(f'version="{version}"')
             b = b.split('"', 1)[1]
-            new_setup += f'{a}version="{new_version_str}"{b}'
+            new_pyproject += f'{a}version="{new_version_str}"{b}'
         else:
-            new_setup += line
-with open("setup.py", "w") as f:
-    f.write(new_setup)
+            new_pyproject += line
+with open("pyproject.toml", "w") as f:
+    f.write(new_pyproject)
 
 # pyfax/version.py
 with open("pyfax/version.py", "w") as f:

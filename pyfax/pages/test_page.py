@@ -1,4 +1,4 @@
-from ..page import Page, Color, Line
+from ..page import Color, Line, Page
 
 
 def make_test_page():

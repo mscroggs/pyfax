@@ -1,8 +1,9 @@
 """Helpers for loading data from URLs."""
 
 import json
-import requests
+
 import feedparser
+import requests
 
 
 def load_rss(url):

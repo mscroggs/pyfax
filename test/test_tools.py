@@ -1,7 +1,9 @@
-import os
 import json
-from pyfax.tools import url_helpers
+import os
+
 import pytest
+
+from pyfax.tools import url_helpers
 
 
 def test_json_url_helper():

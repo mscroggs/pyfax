@@ -1,7 +1,7 @@
 """Configuration."""
 
-from typing import Any, Dict
 import os
+from typing import Any, Dict
 
 
 class Config:

@@ -1,9 +1,10 @@
 """Functions to create teletext pages."""
 
-from ._config import config
-from typing import Union, Dict
 import os
 from enum import Enum
+from typing import Dict, Union
+
+from ._config import config
 
 BCHARS = {
     "      ": " ", "x     ": "!", " x    ": "\"", "xx    ": "#", "  x   ": "$",
