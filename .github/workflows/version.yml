@@ -27,7 +27,7 @@ jobs:
 
       - name: Trigger Read the Docs build
         run: python .github/scripts/trigger_rtd_build.py ${{ secrets.RTDS_TOKEN }}
-        if: steps.version-check.outputs.release != 'no'
+        # if: steps.version-check.outputs.release != 'no'
 
       - name: Prepare release
         run: |
