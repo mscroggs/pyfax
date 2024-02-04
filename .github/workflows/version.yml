@@ -31,7 +31,7 @@ jobs:
 
       - name: Prepare release
         run: |
-          python3 prepare_release.py --version ${{ steps.version-check.outputs.release }}
+          python3 .github/scripts/prepare_release.py --version ${{ steps.version-check.outputs.release }}
           python3 -m pip install build
           python3 -m build .
         if: steps.version-check.outputs.release != 'no'
