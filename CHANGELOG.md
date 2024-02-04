@@ -1,3 +1,7 @@
+# Version 2024.2.2 (04 February 2024)
+
+- Update Python versions
+
 # Version 2022.6.5 (20 June 2022)
 
 - fix test
