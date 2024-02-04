@@ -15,10 +15,10 @@ jobs:
       pull-requests: write
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Install PyGitHub
         run: python3 -m pip install PyGitHub
       - name: Check version number and make release if necessary
@@ -29,12 +29,11 @@ jobs:
         run: python .github/scripts/trigger_rtd_build.py ${{ secrets.RTDS_TOKEN }}
         if: steps.version-check.outputs.release != 'no'
 
-      - name: Build a binary wheel and a source tarball
+      - name: Prepare release
         run: |
-          python3 -m pip install wheel
-          python setup.py bdist_wheel
-          python setup.py sdist --formats=gztar
+          python3 -m pip install build
+          python3 -m pip build .
         if: steps.version-check.outputs.release != 'no'
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         if: steps.version-check.outputs.release != 'no'

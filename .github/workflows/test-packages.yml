@@ -13,12 +13,12 @@ jobs:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          ref: v2024.2.4
+          ref: v2024.2.5
         name: Get latest pyfax version
       - run: rm -rf pyfax VERSION
         name: Remove downloaded pyfax
@@ -37,17 +37,17 @@ jobs:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - run: |
-          wget -O pyfax.tar.gz https://pypi.io/packages/source/p/pyfax/pyfax-2024.2.4.tar.gz
+          wget -O pyfax.tar.gz https://pypi.io/packages/source/p/pyfax/pyfax-2024.2.5.tar.gz
           tar -xvzf pyfax.tar.gz
         name: Download and unpack latest version of pyfax
       - run: python3 -m pip install pytest
         name: Install test requirements
       - run: |
-          cd pyfax-2024.2.4
+          cd pyfax-2024.2.5
           python3 -m pip install requests feedparser pytest
           python3 -m pytest test/
         name: Install requirements, run tests and demos
