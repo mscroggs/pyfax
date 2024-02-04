@@ -10,8 +10,12 @@ jobs:
     name: Check version number
     runs-on: ubuntu-20.04
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.12"
     - uses: actions/checkout@master
     - name: Install PyGitHub
-      run: pip3 install PyGitHub
+      run: python3 -m pip install PyGitHub
     - name: Check version number and make release if necessary
-      run: python .github/scripts/version.py ${{ secrets.emffaxbot_github_token }}
+      run: python3 .github/scripts/version.py ${{ secrets.emffaxbot_github_token }}

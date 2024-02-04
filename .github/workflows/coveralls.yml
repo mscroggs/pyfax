@@ -14,10 +14,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: "3.12"
       - uses: actions/checkout@v3
       - run: |
-            pip3 install requests feedparser pytest lipsum pytest-cov coverage coveralls
+            python3 -m pip install requests feedparser pytest lipsum pytest-cov coverage coveralls
         name: Install requirements
       - run: python3 -m pytest --cov=pyfax test/ > .coveralls_output
         name: Run unit tests
