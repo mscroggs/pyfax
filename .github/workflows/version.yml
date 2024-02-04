@@ -12,6 +12,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
+      pull-requests: write
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
