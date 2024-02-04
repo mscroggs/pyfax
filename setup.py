@@ -15,7 +15,7 @@ if __name__ == "__main__":
         description="a Python library for generating teletext tti files",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        version="2024.2.1",
+        version="2024.2.2",
         author="Matthew Scroggs",
         license="MIT",
         author_email="pyfax@mscroggs.co.uk",
