@@ -1,0 +1,38 @@
+name: 🔢
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-version:
+    name: Check version number
+    runs-on: ubuntu-20.04
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.12"
+      - uses: actions/checkout@master
+      - name: Install PyGitHub
+        run: python3 -m pip install PyGitHub
+      - name: Check version number and make release if necessary
+        run: python3 .github/scripts/version.py ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Trigger Read the Docs build
+      run: python .github/scripts/trigger_rtd_build.py ${{ secrets.RTDS_TOKEN }}
+
+    - name: Build a binary wheel and a source tarball
+      run: |
+        python3 -m pip install wheel
+        python setup.py bdist_wheel
+        python setup.py sdist --formats=gztar
+    - name: Publish to PyPI
+      if: startsWith(github.ref, 'refs/tags')
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.pypi_password }}
