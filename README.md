@@ -1,4 +1,4 @@
-![Symfem](logo/logo.png)
+![pyfax](logo/logo.png)
 
 pyfax is a Python library that can be used to generate teletext tti files.
 These files can be used by [vbit2](https://github.com/peterkvt80/vbit2) to
