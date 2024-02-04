@@ -1,3 +1,7 @@
+# Version 2024.2.7 (04 February 2024)
+
+- Add logo
+
 # Version 2024.2.6 (04 February 2024)
 
 - Update Python versions
