@@ -1,2 +1,0 @@
-- Update Python versions
-- Update to use pyproject.toml
