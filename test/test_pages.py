@@ -1,7 +1,13 @@
 import pyfax
 from pyfax import Page, Line, Color
-import lipsum
 import os
+
+lipsum = ("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
+          "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis "
+          "nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu "
+          "fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
+          "culpa qui officia deserunt mollit anim id est laborum.")
 
 
 def test_text():
@@ -43,10 +49,10 @@ def test_block():
 
 def text_wrapped_text():
     p = Page(100)
-    p.add_wrapped_text(2, lipsum.generate_words(500))
+    p.add_wrapped_text(2, lipsum)
 
     p = Page(101)
-    p.add_wrapped_text(2, lipsum.generate_words(500), double=True)
+    p.add_wrapped_text(2, lipsum, double=True)
 
 
 def test_tagline():

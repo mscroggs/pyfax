@@ -24,7 +24,7 @@ jobs:
         name: Remove downloaded pyfax
       - run: python3 -m pip install pyfax
         name: Install pyfax
-      - run: python3 -m pip install pytest lipsum
+      - run: python3 -m pip install pytest
         name: Install test requirements
       - run: python3 -m pytest test/
         name: Run unit tests
@@ -44,10 +44,10 @@ jobs:
           wget -O pyfax.tar.gz https://pypi.io/packages/source/p/pyfax/pyfax-2022.6.5.tar.gz
           tar -xvzf pyfax.tar.gz
         name: Download and unpack latest version of pyfax
-      - run: python3 -m pip install pytest lipsum
+      - run: python3 -m pip install pytest
         name: Install test requirements
       - run: |
           cd pyfax-2022.6.5
-          python3 -m pip install requests feedparser pytest lipsum
+          python3 -m pip install requests feedparser pytest
           python3 -m pytest test/
         name: Install requirements, run tests and demos
