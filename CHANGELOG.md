@@ -1,3 +1,7 @@
+# Version 2024.2.8 (06 February 2024)
+
+- Test release workflow
+
 # Version 2024.2.7 (04 February 2024)
 
 - Add logo
