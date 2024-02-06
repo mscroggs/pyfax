@@ -3,6 +3,9 @@ name: 🧪📦
 on:
   schedule:
     - cron: "0 7 * * 1"
+  push:
+    branches:
+      - "**"
 
 jobs:
   run-tests-with-pip:
