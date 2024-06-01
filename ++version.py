@@ -73,4 +73,16 @@ with open(".github/workflows/test-packages.yml") as f:
 with open(".github/workflows/test-packages.yml", "w") as f:
     f.write(new_test)
 
+# .github/workflows/version.yml
+new_test = ""
+with open(".github/workflows/version.yml") as f:
+    for line in f:
+        if "--version " in line:
+            new_test += line.split("--version ")[0]
+            new_test += f" {new_version_str}\n"
+        else:
+            new_test += line
+with open(".github/workflows/version.yml", "w") as f:
+    f.write(new_test)
+
 print(f"Updated version to {new_version_str}")
