@@ -4,6 +4,7 @@ import json
 
 import feedparser
 import requests
+import xml.etree.ElementTree as ET
 
 
 def load_rss(url):
@@ -25,6 +26,19 @@ def load_json(url, headers={}, cookies={}):
     """
     feed = load(url, headers, cookies)
     return json.loads(feed)
+
+
+def load_xml(url, headers={}, cookies={}):
+    """Load data from an XML feed.
+
+    Args:
+        url: The URL of the feed.
+        headers: Headers to send with the request.
+        cookies: Cookies to send with the request.
+    """
+    feed = load(url, headers, cookies)
+    tree = ET.fromstring(feed)
+    return tree
 
 
 def load_csv(url, headers={}, cookies={}):
