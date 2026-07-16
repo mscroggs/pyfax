@@ -95,11 +95,11 @@ def make_test_page():
     line = Line()
     for c in [Color.WHITE, Color.RED, Color.GREEN, Color.BLUE,
               Color.CYAN, Color.MAGENTA, Color.YELLOW]:
-        line.add_block(".xxx.xxx\n.x.x.x.x\nxx.xxx.x", c, None)
+            line.add_block(".xxx.xxx\n.x.x.x.x\nxx.xxx.x", c, None)
     p.set_line(15, line)
 
     line = Line()
-    ip = os.popen("hostname -I").read().split()[0]
+    ip = "".join(os.popen("hostname -I").read().split()[:1])
     line.add_text(f"My IP address is {ip}")
     p.set_line(17, line)
 
