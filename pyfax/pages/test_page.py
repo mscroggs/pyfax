@@ -1,3 +1,4 @@
+import os
 from ..page import Color, Line, Page
 
 
@@ -96,5 +97,10 @@ def make_test_page():
               Color.CYAN, Color.MAGENTA, Color.YELLOW]:
         line.add_block(".xxx.xxx\n.x.x.x.x\nxx.xxx.x", c, None)
     p.set_line(15, line)
+
+    line = Line()
+    ip = os.popen("hostname -I").read().split()[0]
+    line.add_text(f"My IP address is {ip}")
+    p.set_line(17, line)
 
     p.write()
